@@ -20,7 +20,7 @@ Please refer to our paper for more details, [The Belebele Benchmark: a Parallel 
 
 ## Download
 
-Belebele can be downloaded [here](https://dl.fbaipublicfiles.com/belebele/Belebele.zip) which you can download with the following command:
+Belebele can be downloaded [here](https://dl.fbaipublicfiles.com/belebele/Belebele.zip) which you can download programmatically with the following bash command:
 
 ```bash
 wget --trust-server-names https://dl.fbaipublicfiles.com/belebele/Belebele.zip
@@ -39,7 +39,7 @@ The dataset can additionally be used via the [HuggingFace repo](https://huggingf
 
 ## Pausible Evaluation Settings
 
-Thanks to the parallel nature of the dataset and the simplicity of the task, there are many possible settings in which we can evaluate language models. In all evaluation settings, the metric of interest is simple accuracy (# correct / total).
+Thanks to the parallel nature of the dataset and the simplicity of the task, there are many possible settings in which we can evaluate language models. In all evaluation settings, the metric of interest is simple accuracy (# correct / total). Several of the evaluation settings were implemented with several models and discussed in the paper.
 
 Evaluating models on Belebele in English can be done via finetuning, few-shot, or zero-shot. For other target languages, we propose the incomprehensive list of evaluation settings below. Settings that are compatible with evaluating non-English models (monolingual or cross-lingual) are denoted with `^`.
 
