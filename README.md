@@ -20,11 +20,13 @@ Please refer to our paper for more details, [The Belebele Benchmark: a Parallel 
 
 ## Download
 
-Belebele can be downloaded [here](https://dl.fbaipublicfiles.com/belebele/Belebele.zip) which you can download with the following command:
+Belebele can be downloaded [here](https://dl.fbaipublicfiles.com/belebele/Belebele.zip) which you can download programmatically with the following bash command:
 
 ```bash
 wget --trust-server-names https://dl.fbaipublicfiles.com/belebele/Belebele.zip
 ```
+
+The dataset can additionally be used via the [HuggingFace repo](https://huggingface.co/datasets/facebook/belebele), such as with the `datasets` library.
 
 ## Formatting details
 
@@ -37,14 +39,14 @@ wget --trust-server-names https://dl.fbaipublicfiles.com/belebele/Belebele.zip
 
 ## Pausible Evaluation Settings
 
-Thanks to the parallel nature of the dataset and the simplicity of the task, there are many possible settings in which we can evaluate language models. In all evaluation settings, the metric of interest is simple accuracy (# correct / total).
+Thanks to the parallel nature of the dataset and the simplicity of the task, there are many possible settings in which we can evaluate language models. In all evaluation settings, the metric of interest is simple accuracy (# correct / total). Several of the evaluation settings were implemented with several models and discussed in the paper.
 
 Evaluating models on Belebele in English can be done via finetuning, few-shot, or zero-shot. For other target languages, we propose the incomprehensive list of evaluation settings below. Settings that are compatible with evaluating non-English models (monolingual or cross-lingual) are denoted with `^`.
 
 #### No finetuning
 - **Zero-shot with natural language instructions (English instructions)**
     - For chat-finetuned models, we give it English instructions for the task and the sample in the target language in the same input.
-    - For our experiments, we instruct the model to provide the letter `A`, `B`, `C`, or `D`. We perform post-processing steps and accept answers predicted as e.g. `(A)` instead of `A`. We sometimes additionally remove the prefix `The correct answer is` for predictions that do not start with one of the four accepted answers.
+    - See the `sample_zero_shot_instructions.md` file for specific details on how we evaluated instructed models for the paper.
 - **Zero-shot with natural language instructions (translated instructions)**^
     - Same as above, except the instructions are translated to the target language so that the instructions and samples are in the same language. The instructions can be human or machine-translated.
 - **Few-shot in-context learning (English examples)**
