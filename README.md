@@ -35,6 +35,10 @@ The dataset can additionally be used via the [HuggingFace repo](https://huggingf
 - The language of each row is denoted in the `dialect` column with the FLORES-200 code (see Languages below)
 - The `correct_answer_num` is one-indexed (e.g. a value of `2` means `mc_answer2` is correct)
 
+## Multimodal Belebele
+
+In the `2M-belebele` directory, you will find details about the multimodal (speech+ASL) version of belebele.
+
 --------------------------------------------------------------------------------
 
 ## Pausible Evaluation Settings
