@@ -1,0 +1,12 @@
+[project]
+name = "align"
+version = "0.1.0"
+description = "Belebele - Fleurs alignment script"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "datasets>=3.2.0",
+    "numpy>=2.2.0",
+    "pandas>=2.2.3",
+    "stopes>=2.2.0",
+]
