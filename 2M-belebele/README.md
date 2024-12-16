@@ -2,7 +2,7 @@
 
 ## Highly-Multilingual Speech and American Sign Language Comprehension Dataset
 
-We introduce **2M-Belebele** as the first highly multilingual speech and American Sign Language (ASL) comprehension dataset. Our dataset, which is an extension of the existing Belebele only-text dataset, covers 74 spoken languages at the intersection of Belebele and Fleurs, and one sign language (ASL). 
+We introduce [**2M-Belebele**](https://arxiv.org/abs/2412.08274) as the first highly multilingual speech and American Sign Language (ASL) comprehension dataset. Our dataset, which is an extension of the existing Belebele only-text dataset, covers 74 spoken languages at the intersection of Belebele and Fleurs, and one sign language (ASL). 
 
 The speech dataset is built from aligning Belebele, Flores200 and Fleurs datasets as well as recording completely new audio for the sentences missing in Fleurs. We also provide new recordings for the Belebele question and answers as these are not in the original Flores200 dataset. 
 
