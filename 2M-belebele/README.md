@@ -16,6 +16,8 @@ The speech dataset can be downloaded with the provided script. The data is parti
 
 `python dl_2mbelebele.py fra_Latn -o /tmp/belebele`
 
+The dataset is also available as a [huggingface dataset](https://huggingface.co/datasets/facebook/2M-Belebele).
+
 Here is sample code that you can use to load this dataset:
 
 ```
@@ -67,7 +69,32 @@ for r in df.sample(1).iter_rows(named=True):
        d(Audio(data=np.array(a['audio']['wav'], dtype=np.float64), rate=a['audio']['sampling_rate']))
 ```
 
-We are actively working to make this dataset available on huggingface.
+
+### Columns
+
+- link: the link of the original document containing the passage.
+- question_number: the question number for this passage. Some passages have multiple questions.
+- flores_passage: the paragraph for the passage, coming from belebele text
+- question: the text question
+- mc_answer1: 1st answer, text
+- mc_answer2: 2nd answer, text
+- mc_answer3: 3rd answer, text
+- mc_answer4: 4th answer, text
+- flores: details about the flores entries in this passage. A list of structs with ids and split of the
+original flores entry, in order of appearance in the passage + metadata about each sentence.
+- correct_answer_num: the number of the correct answer
+- dialect: the dialect/lang that you've loaded
+- audio_segments: a list of audio segments, in order, corresponding to each flores sentence in this passage. On sentence might have been read by multiple speakers, so for each sentence there is an array of segments, with metadata about the speaker and source (fleurs or meta recording) and the audio wav blob, make sure to use the provided sample rate when loading.
+- unmatched_audio: were there any sentences not matched to audio in this passage
+- fleurs_audio_match: how many segments come from fleurs
+- meta_audio_match: how many come from meta recording
+- has_matched_audio: was at least one sentence matched
+- question_audio: the audio recording for the question, a single speaker is provided.
+- answer_1_audio: the audio recording for the answer, a single speaker is provided.
+- answer_2_audio: the audio recording for the answer, a single speaker is provided.
+- answer_3_audio: the audio recording for the answer, a single speaker is provided.
+- answer_4_audio: the audio recording for the answer, a single speaker is provided.
+- flores_sentences: the list of flores sentences 
 
 ### Languages in Belebele-speech
 
