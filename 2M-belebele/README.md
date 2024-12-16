@@ -242,3 +242,8 @@ Comprehension Dataset},
 
 2M-Belebele is released under CC-BY-SA4.0, it is composed of Flores200 (CC-BY-SA 4.0), belebele (CC-BY-SA4.0) and fleurs (cc-by-4.0).
 
+## Belebele-Fleurs Alignment
+
+2M-Belebele speech is composed of recordings gathered by Meta as well as existing recordings from the Fleurs dataset. The text version of belebele was created by reconstructing passages using Flores200 sentences. Fleurs provide recordings for some of Flores sentences. We align the belebele dataset to fleurs by first aligning the passages to Flores sentences and then these sentences to Fleurs recordings.
+
+You can find the belebele to fleurs align code in [align/align.py](the `align.py` script). This is just for documentation as you should not have to run this if you download the dataset provided here. The 2M-Belebele also contains more data than what this alignment would provide as we provide more recording of passages as well as recordings for the questions and answers.
